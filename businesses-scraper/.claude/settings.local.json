@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//home/philip/projects/company_data/**)",
+      "Bash(python3 -I -)",
+      "Read(//tmp/scrape_diag/**)",
+      "Bash(python3 -I -c ' *)",
+      "Bash(:)",
+      "Bash(timeout 110 bash -c 'until grep -q \"elapsed=\" /tmp/claude-1000/-home-philip-projects-company-data-businesses-scraper/c5b5e638-aaf7-43a7-89da-90733288b450/tasks/bvlj4vq55.output 2>/dev/null; do sleep 5; done')",
+      "Bash(timeout 900 /home/philip/projects/company_data/businesses-scraper/venv/bin/python -I oldtest.py)",
+      "Bash(echo done *)",
+      "Bash(timeout 110 bash -c 'until grep -q \"^done\" /tmp/scrape_diag/old_out.txt 2>/dev/null; do sleep 5; done')",
+      "Bash(timeout 115 /home/philip/projects/company_data/businesses-scraper/venv/bin/python -I newtest.py 2000)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(timeout 115 bash -c 'until grep -q \"elapsed=\" /tmp/scrape_diag/run2000.txt 2>/dev/null; do sleep 3; done')",
+      "Bash(ps -o etime=,pid= -p 425272)",
+      "Bash(timeout 15 getent hosts example.com)",
+      "Bash(timeout 110 bash -c 'until timeout 5 getent hosts example.com >/dev/null; do sleep 5; done')",
+      "Bash(timeout 8 getent hosts example.com)",
+      "Bash(timeout 10 curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://example.com)",
+      "Read(//tmp/e2e/**)",
+      "Bash(/home/philip/projects/company_data/businesses-scraper/venv/bin/python -I -c ' *)",
+      "Bash(venv/bin/pip install *)",
+      "Bash(venv/bin/python -I -c \"import aiodns, aiohttp; print\\('aiodns', aiodns.__version__, 'aiohttp', aiohttp.__version__\\); r=aiohttp.AsyncResolver\\(\\); print\\('AsyncResolver ok'\\)\")",
+      "Bash(ps -o pid,etime,rss,vsz,pcpu,cmd -C python -C python3)",
+      "Bash(ps -eo pid,etime,rss,pcpu,args)",
+      "Read(//tmp/e2e3/**)",
+      "Bash(sed -i 's|    spec = importlib.util.spec_from_file_location\\(\"b2b\", \"/home/philip/projects/company_data/businesses-scraper/b2b_scraper_ca.py\"\\)\\\\n||' test_e2e3.py)",
+      "Bash(python3 -)",
+      "Bash(rm -rf /tmp/e2e3/out)",
+      "Bash(mkdir -p /tmp/e2e3/out)",
+      "Bash(rm -rf out)",
+      "Bash(mkdir -p out)",
+      "Bash(timeout 115 /home/philip/projects/company_data/businesses-scraper/venv/bin/python -I test_e2e3.py)",
+      "Bash(timeout 60 /home/philip/projects/company_data/businesses-scraper/venv/bin/python -I -c ' *)",
+      "Bash(python3 -c ' *)",
+      "Bash(awk -F: '{s+=$2} END {print \"total checkpoint lines:\", s}')",
+      "Bash(awk '{print $5, $9}')",
+      "Read(//proc/**)",
+      "Read(//tmp/**)"
+    ]
+  }
+}
