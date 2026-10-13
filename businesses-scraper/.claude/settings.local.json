@@ -37,7 +37,9 @@
       "Bash(awk -F: '{s+=$2} END {print \"total checkpoint lines:\", s}')",
       "Bash(awk '{print $5, $9}')",
       "Read(//proc/**)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(venv/bin/pip list *)",
+      "Bash(venv/bin/pip show *)"
     ]
   }
 }
